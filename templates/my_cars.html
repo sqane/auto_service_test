@@ -17,6 +17,7 @@
     <td>{% if lang == 'en' %}{{ each.car.name_en }} {% elif lang == 'ru' %}
         {{ each.car.name_ru }}
     {% endif %}</td>
+
     <td>{{ each.car.year }}    </td>
     <td>{% if each.in_rent %}Да{% else %}Нет{% endif %}</td>
     <td>{% if each.already_leased %}Да{% else %}Нет{% endif %}</td>
