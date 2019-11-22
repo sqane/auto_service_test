@@ -86,6 +86,7 @@ def register(request):
                 au.user = u
                 lang = models.Language.objects.get(pk=request.POST['lang'])
                 au.lang = lang
+                au.save()
                 user_to_login = authenticate(username=request.POST['email'].lower(),
                                              password=request.POST['password'])
                 login(request, user_to_login)
