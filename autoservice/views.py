@@ -121,7 +121,7 @@ def user_add_car(request):
             car_user.user = as_user
             car_user.car = car
             car_user.save()
-            return redirect('/my_cars')
+            return redirect('/cars?pk='+user.pk)
 
     context['form'] = form
     return render(request,'add_user_car.html',context)
