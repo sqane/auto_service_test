@@ -61,6 +61,8 @@ def logon(request):
 
 
 
+
+
 def register(request):
     user = request.user
     if user.is_authenticated:
