@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Добавить машину{% endblock %}
+
+{% block content %}
+    <div style="line-height: 20px;
+  border: 3px solid green;
+  text-align: center;">
+<h2>Добавление машины</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit">Добавить</button>
+</form>
+    </div>
+{% endblock %}

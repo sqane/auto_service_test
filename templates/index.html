@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+
+Вы авторизованы под логином : {{ user.username }}!
+     <br>
+    <br>
+    <a href="/user_detail?pk={{ user.pk }}">Мой профиль</a>
+      <br>
+    <br>
+    <br>
+ <a href="/accounts/logout">Выход</a>
+
+{% endblock %}

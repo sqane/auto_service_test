@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if current_user == user %} Изменить язык
+{%  endif %}{% endblock %}
+
+{% block content %}
+  <form method="post">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit">Сохранить</button>
+</form>
+    <br>
+    <a href="/">На главную</a>
+
+   {% endblock %}

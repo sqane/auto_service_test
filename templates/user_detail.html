@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if current_user == user %} Мой профиль
+    {% else %}
+    Профиль ползователя {{ user.username }}
+{%  endif %}{% endblock %}
+
+{% block content %}
+       email:{{ current_user.email }}<br>
+   Имя:{{ current_user.first_name }}
+    <br>
+
+   Фамилия:{{ current_user.last_name }}<br>
+   Язык:{{ current_as_user.lang.name }} {% if current_user == user %}<a href="/change_lang?pk={{ current_user.pk }}">Сменить</a>{% endif %}<br>
+    {% if current_user == user or user.is_superuser %}
+        <a href="/change_user_data?pk={{ current_user.pk }}">Изменить данные</a>
+    {% endif %}<br>
+        <a href="/cars?pk={{ user.pk }}">Машины</a>
+    <br>
+    <a href="/">На главную</a>
+
+   {% endblock %}
