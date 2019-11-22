@@ -16,5 +16,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'auto_service.settings')
 application = get_wsgi_application()
 
 
+
 application = get_wsgi_application()
 application = DjangoWhiteNoise(application)
