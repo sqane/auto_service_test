@@ -39,10 +39,11 @@ class GetAllUsers(APIView):
 class GetUserData(APIView):
     permission_classes = (IsAuthenticated,)
     def post(self,request):
-        user = request.user.values('id','username','email','first_name','last_name','last_login')
+        user = request.user
+        user1 = models.User.objects.get(pk=user.pk).values('id','username','email','first_name','last_name','last_login')
         as_user = models.AS_user.objects.get(user=user).values('id','lang__name')
 
-        return Response(user,as_user)
+        return Response(user1,as_user)
 
 class GetUserCars(APIView):
     permission_classes = (IsAuthenticated,)
