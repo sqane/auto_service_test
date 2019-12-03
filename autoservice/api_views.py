@@ -36,6 +36,12 @@ class GetAllUsers(APIView):
             each['as_lang_pk'] = as_user.lang.pk
 
         return Response({"users": users})
+class GetUserData(APIView):
+    permission_classes = (IsAuthenticated,)
+    def post(self,request):
+        user = request.user
+        as_user = models.AS_user.objects.get(user=user)
+        return Response(user,as_user)
 
 class GetUserCars(APIView):
     permission_classes = (IsAuthenticated,)
